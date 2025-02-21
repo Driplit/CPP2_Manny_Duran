@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            Debug.Log("Spotter no bullet fired!");
+            Debug.Log("Spotted no bullet fired!");
         }
     }
 }
