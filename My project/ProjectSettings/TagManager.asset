@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameOverTrigger
   - target
+  - Ground
   layers:
   - Default
   - TransparentFX

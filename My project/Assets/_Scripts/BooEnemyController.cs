@@ -3,6 +3,7 @@ using UnityEngine;
 public class BooEnemyController : MonoBehaviour
 {
     public Transform player;         // Reference to the player's transform
+    public LookAtPlayer look;        // Checking to see if player is looking at them
     public float followSpeed = 5f;   // Speed at which the enemy moves
     public float followRange = 10f;  // Distance within which the enemy starts following
     public float stopDistance = 1.5f; // Distance at which the enemy stops moving closer
@@ -14,8 +15,9 @@ public class BooEnemyController : MonoBehaviour
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            if (distanceToPlayer <= followRange && distanceToPlayer > stopDistance)
+            if (distanceToPlayer <= followRange && distanceToPlayer > stopDistance && !look.Spotted)
             {
+                
                 // Move the enemy toward the player
                 Vector3 direction = (player.position - transform.position).normalized;
                 transform.position += direction * followSpeed * Time.deltaTime;
